@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vh;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.image-container {
+  width: 800px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.img {
+  object-fit: cover;
+  display: none;
+}
+
+.up {
+  position: absolute;
+  margin-top: 2px;
+  margin-left: 50%;
+}
+
+.down {
+  position: absolute;
+  margin-bottom: 2px;
+  margin-left: 50%;
+}
