@@ -25,9 +25,9 @@
   display: block;
 }
 
-.up {
+.up,
+.down {
   position: absolute;
-  top: 2px;
   left: 400px;
   transform: translatex(-50%);
   padding: 5px;
@@ -37,14 +37,10 @@
   color: white;
 }
 
+.up {
+  top: 2px;
+}
+
 .down {
-  position: absolute;
   bottom: 2px;
-  left: 400px;
-  transform: translatex(-50%);
-  padding: 5px;
-  cursor: pointer;
-  background-color: rgba(211, 211, 211, 0.4);
-  border-radius: 50%;
-  color: white;
 }

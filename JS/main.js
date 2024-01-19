@@ -15,7 +15,32 @@ imageContainerEl.innerHTML += imagesHtml;
 const arrowUp = document.querySelector(".up");
 const arrowDown = document.querySelector(".down");
 
+arrowDown.addEventListener("click", function () {
+  const nextImage = document.querySelector(".img.active");
+  nextImage.classList.remove("active");
+  const allImages = document.getElementsByClassName("img");
+
+  if (currentImage >= allImages.length - 1) {
+    currentImage = 0;
+  } else {
+    currentImage++;
+  }
+
+  let newImage = allImages[currentImage];
+  newImage.classList.add("active");
+});
+
 arrowUp.addEventListener("click", function () {
   const nextImage = document.querySelector(".img.active");
   nextImage.classList.remove("active");
+  const allImages = document.getElementsByClassName("img");
+
+  if (currentImage <= 0) {
+    currentImage = allImages.length - 1;
+  } else {
+    currentImage--;
+  }
+
+  let newImage = allImages[currentImage];
+  newImage.classList.add("active");
 });
