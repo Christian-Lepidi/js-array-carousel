@@ -59,5 +59,5 @@ imageContainerEl.addEventListener("mouseover", function () {
 });
 
 imageContainerEl.addEventListener("mouseout", function () {
-  scrollImage(scroll);
+  setInterval(scrollImage, 3000);
 });
