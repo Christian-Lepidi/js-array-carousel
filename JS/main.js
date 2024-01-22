@@ -16,18 +16,7 @@ const arrowUp = document.querySelector(".up");
 const arrowDown = document.querySelector(".down");
 
 arrowDown.addEventListener("click", function () {
-  const nextImage = document.querySelector(".img.active");
-  nextImage.classList.remove("active");
-  const allImages = document.getElementsByClassName("img");
-
-  if (currentImage >= allImages.length - 1) {
-    currentImage = 0;
-  } else {
-    currentImage++;
-  }
-
-  let newImage = allImages[currentImage];
-  newImage.classList.add("active");
+  scrollDown();
 });
 
 arrowUp.addEventListener("click", function () {
@@ -43,4 +32,32 @@ arrowUp.addEventListener("click", function () {
 
   let newImage = allImages[currentImage];
   newImage.classList.add("active");
+});
+
+const scroll = setInterval(scrollImage, 3000);
+function scrollImage() {
+  scrollDown();
+}
+
+function scrollDown() {
+  const nextImage = document.querySelector(".img.active");
+  nextImage.classList.remove("active");
+  const allImages = document.getElementsByClassName("img");
+
+  if (currentImage <= 0) {
+    currentImage = allImages.length - 1;
+  } else {
+    currentImage--;
+  }
+
+  let newImage = allImages[currentImage];
+  newImage.classList.add("active");
+}
+
+imageContainerEl.addEventListener("mouseover", function () {
+  clearInterval(scroll);
+});
+
+imageContainerEl.addEventListener("mouseout", function () {
+  scrollImage(scroll);
 });
